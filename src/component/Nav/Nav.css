@@ -1,0 +1,18 @@
+.navAll {
+  position: fixed;
+  background: -webkit-linear-gradient(#ff70a6, #ff9770, #ffd670);
+  width: 3rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navAll img {
+  height: 2rem;
+  width: 2rem;
+}
+.logOutButton {
+  padding-bottom: 3rem;
+}

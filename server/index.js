@@ -3,6 +3,8 @@ const express = require("express");
 const { json } = require("body-parser");
 const massive = require("massive");
 
+const { getUser } = require("./controller");
+
 const port = 3005;
 
 const app = express();
@@ -12,6 +14,9 @@ massive(process.env.CONNECTION_STRING).then(db => {
 });
 
 app.use(json());
+
+//Endppoints
+app.get("/api/auth/login", getUser);
 
 app.listen(port, () => {
   console.log(`Whistle Tippin on port ${port}`);

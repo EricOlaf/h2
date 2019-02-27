@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
-          <Nav />
+          {this.props.location.pathname === "/" ? null : <Nav />}
           <div className="App">{routes}</div>
         </div>
       </HashRouter>
