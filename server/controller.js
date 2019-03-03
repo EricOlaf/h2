@@ -35,9 +35,17 @@ const deleted = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
+const editPost = (req, res, next) => {
+  const db = req.app.get("db");
+  db.editPost([req.params.id, req.body.changedTitle, req.body.changedContent])
+    .then(res.status(200))
+    .catch(err => console.log(err));
+};
+
 module.exports = {
   getUser,
   getPosts,
   posted,
-  deleted
+  deleted,
+  editPost
 };
