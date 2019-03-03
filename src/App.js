@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import { HashRouter } from "react-router-dom";
 import routes from "./route";
 
@@ -11,7 +10,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
-          {this.props.location.pathname === "/" ? null : <Nav />}
+          <Nav />
           <div className="App">{routes}</div>
         </div>
       </HashRouter>

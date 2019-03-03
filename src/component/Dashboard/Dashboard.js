@@ -11,3 +11,7 @@ class Dashboard extends Component {
 }
 
 export default Dashboard;
+
+//Make a list of all the different posts
+
+//Search feature and find a post

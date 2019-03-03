@@ -16,7 +16,7 @@ massive(process.env.CONNECTION_STRING).then(db => {
 app.use(json());
 
 //Endppoints
-app.get("/api/auth/login", getUser);
+app.post("/api/auth/login", getUser);
 
 app.listen(port, () => {
   console.log(`Whistle Tippin on port ${port}`);
