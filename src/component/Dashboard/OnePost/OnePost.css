@@ -1,0 +1,22 @@
+.opAll .off {
+  display: none;
+}
+
+.opAll .on {
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: gainsboro;
+  top: 0;
+  left: 7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.opAll button {
+  height: 5rem;
+  width: 7rem;
+  background-color: darkseagreen;
+}

@@ -9,25 +9,24 @@ const Nav = props => {
       <div className="navTop">
         <img src="" alt="" />
         <Link to="/dashboard">
-          <img
-            src="https://www.iconsdb.com/icons/preview/white/home-5-xxl.png"
-            alt=""
-          />
+          <div className="navButton">
+            {" "}
+            <div>HOME</div>
+          </div>
         </Link>
-        <Link to="/form">
-          <img
-            src="https://www.iconsdb.com/icons/preview/white/child-new-post-xxl.png"
-            alt=""
-          />
+        <Link to="/new">
+          <div className="navButton">
+            {" "}
+            <div>NEW POST</div>
+          </div>
         </Link>
       </div>
       <div className="NavBottom">
         <Link to="/">
-          <img
-            className="logoutButton"
-            src="https://www.iconsdb.com/icons/preview/white/account-logout-xxl.png"
-            alt=""
-          />
+          <div className="navButton">
+            {" "}
+            <div>LOGOUT</div>
+          </div>
         </Link>
       </div>
     </div>

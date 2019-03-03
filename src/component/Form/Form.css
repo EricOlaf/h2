@@ -1,0 +1,28 @@
+.form {
+  width: 100vw;
+  height: 100vh;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+}
+
+.form .inner {
+  margin-top: 20vh;
+  width: 40rem;
+  height: 30rem;
+  background-color: dimgrey;
+}
+
+.inner input {
+  width: 80%;
+}
+
+.inner textarea {
+  width: 80%;
+  height: 30%;
+}
+
+.inner button {
+  height: 5rem;
+  width: 7rem;
+}

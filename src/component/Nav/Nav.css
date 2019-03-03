@@ -1,7 +1,7 @@
 .navAll {
   position: fixed;
   background: -webkit-linear-gradient(#ff70a6, #ff9770, #ffd670);
-  width: 3rem;
+  width: 7rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,18 @@
 .navAll img {
   height: 2rem;
   width: 2rem;
+}
+
+.navButton {
+  height: 5rem;
+  width: 5rem;
+  background-color: gainsboro;
+  border-radius: 50%;
+  text-align: center;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logOutButton {
   padding-bottom: 3rem;

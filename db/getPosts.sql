@@ -1,3 +1,3 @@
 SELECT *
 FROM heloposts
-ORDER BY id ASC;
+ORDER BY id DESC;
