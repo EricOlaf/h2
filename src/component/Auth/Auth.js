@@ -24,12 +24,12 @@ class Auth extends Component {
     axios
       .post("/api/auth/login", user)
       .then(res => {
-        // console.log(res);
-        this.props.handleUser(
-          res.data.id,
-          res.data.username,
-          res.data.profilepic
-        );
+        console.log(res);
+        // this.props.handleUser(
+        //   res.data.id,
+        //   res.data.username,
+        //   res.data.profilepic
+        // );
       })
       .then(() => this.props.history.push("/dashboard"));
   };
@@ -54,6 +54,7 @@ class Auth extends Component {
 
   render() {
     // let { username, password } = this.state;
+    console.log(this.state);
     return (
       <div className="authAll">
         <div className="authBox">

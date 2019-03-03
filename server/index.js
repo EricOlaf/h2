@@ -3,9 +3,9 @@ const express = require("express");
 const { json } = require("body-parser");
 const massive = require("massive");
 
-const { getUser } = require("./controller");
+const { getUser, getPosts } = require("./controller");
 
-const port = 3005;
+const serverPort = 3005;
 
 const app = express();
 
@@ -17,7 +17,8 @@ app.use(json());
 
 //Endppoints
 app.post("/api/auth/login", getUser);
+app.get("/api/dashboard/posts", getPosts);
 
-app.listen(port, () => {
-  console.log(`Whistle Tippin on port ${port}`);
+app.listen(serverPort, () => {
+  console.log(`Whistle Tippin on port ${serverPort}`);
 });
