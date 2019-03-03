@@ -1,22 +1,27 @@
 import React, { Component } from "react";
 import axios from "axios";
+import EachPost from "./EachPost/EachPost";
 
 class Dashboard extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      posts: []
+    };
   }
   componentDidMount() {
     axios.get("/api/dashboard/posts").then(res => {
-      console.log(res);
+      this.setState({ posts: res.data });
     });
   }
 
   render() {
+    let { posts } = this.state;
+    console.log(posts);
     return (
       <div>
         Dashboard
-        <div>Need to bring in all the data</div>
+        <EachPost posts={posts} />
       </div>
     );
   }

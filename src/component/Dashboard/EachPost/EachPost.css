@@ -1,0 +1,22 @@
+.allPosts {
+  width: 80vw;
+  max-width: 50rem;
+  margin: auto;
+  border: 2px solid black;
+  box-shadow: 4px 4px 4px black;
+  padding: 2rem;
+}
+
+.allPosts > .eachPost {
+  width: 70vw;
+  max-width: 40rem;
+  margin: auto;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.eachPost > h1 {
+  margin: 0 3rem;
+}
