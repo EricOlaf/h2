@@ -6,7 +6,12 @@ class Dashboard extends Component {
     this.state = {};
   }
   render() {
-    return <div>Dashboard</div>;
+    return (
+      <div>
+        Dashboard
+        <div>Need to bring in all the data</div>
+      </div>
+    );
   }
 }
 
@@ -21,3 +26,5 @@ export default Dashboard;
 //Allow someone to put a picture in a post
 
 //Login and logout
+
+//Reset button for search posts
