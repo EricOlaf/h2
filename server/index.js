@@ -15,6 +15,8 @@ const serverPort = 3005;
 
 const app = express();
 
+app.use(express.static(`${__dirname}/../build`));
+
 massive(process.env.CONNECTION_STRING).then(db => {
   app.set("db", db);
 });
