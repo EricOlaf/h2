@@ -42,10 +42,21 @@ const editPost = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
+const registerUser = (req, res, next) => {
+  const db = req.app.get("db");
+  console.log(req.body);
+  db.register([req.body.username, req.body.password])
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => console.log(err));
+};
+
 module.exports = {
   getUser,
   getPosts,
   posted,
   deleted,
-  editPost
+  editPost,
+  registerUser
 };

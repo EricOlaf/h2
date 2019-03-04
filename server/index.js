@@ -1,3 +1,4 @@
+// import { register } from "../src/serviceWorker";
 require("dotenv").config();
 const express = require("express");
 const { json } = require("body-parser");
@@ -8,7 +9,8 @@ const {
   getPosts,
   posted,
   deleted,
-  editPost
+  editPost,
+  registerUser
 } = require("./controller");
 
 const serverPort = 3005;
@@ -29,6 +31,7 @@ app.get("/api/dashboard/posts", getPosts);
 app.post("/api/newpost", posted);
 app.delete("/api/dahsboard/delete:id", deleted);
 app.put("/api/posts/edit:id", editPost);
+app.post("/api/register", registerUser);
 
 app.listen(serverPort, () => {
   console.log(`Whistle Tippin on port ${serverPort}`);

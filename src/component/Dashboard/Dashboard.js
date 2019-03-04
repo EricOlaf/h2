@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import EachPost from "./EachPost/EachPost";
 import OnePost from "./OnePost/OnePost";
+import { connect } from "react-redux";
 
 class Dashboard extends Component {
   constructor() {
@@ -9,7 +10,8 @@ class Dashboard extends Component {
     this.state = {
       posts: [],
       selectedPost: {},
-      showPost: "off"
+      showPost: "off",
+      name: ""
     };
   }
   componentDidMount() {
@@ -28,19 +30,16 @@ class Dashboard extends Component {
   };
 
   deleteHandler = id => {
-    console.log(id);
     axios.delete(`/api/dahsboard/delete${id}`).then(res => {
       this.setState({ posts: res.data });
     });
   };
 
-  editHandler = id => {
-    console.log(id);
-  };
+  editHandler = id => {};
 
   render() {
-    let { posts, selectedPost, showPost } = this.state;
-    console.log(posts, selectedPost, showPost);
+    let { posts, selectedPost, showPost, name, userID } = this.state;
+    console.log(this.props);
     return (
       <div className="dashboard">
         Dashboard
@@ -60,16 +59,10 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+  return {
+    state
+  };
+};
 
-//Make a list of all the different posts
-
-//Search feature and find a post
-
-//Allow someone to write a post
-
-//Allow someone to put a picture in a post
-
-//Login and logout
-
-//Reset button for search posts
+export default connect(mapStateToProps)(Dashboard);

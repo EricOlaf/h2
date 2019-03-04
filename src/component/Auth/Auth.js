@@ -35,19 +35,14 @@ class Auth extends Component {
   };
   registerHandler = () => {
     const { username, password } = this.state;
-    let user = {
-      username,
-      password
-    };
 
     this.props
-      .handleRegister(user)
+      .handleRegister(username, password)
       .then(() => this.props.history.push("/dashboard"));
   };
 
   render() {
     // let { username, password } = this.state;
-    console.log(this.state);
     return (
       <div className="authAll">
         <div className="authBox">
