@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { handleUser } from "../../ducks/reducer";
+import { handleRegister } from "../../ducks/reducer";
 
 import "./Auth.css";
 
@@ -39,16 +39,9 @@ class Auth extends Component {
       username,
       password
     };
-    axios
-      .post("/api/auth/login", user)
-      .then(res => {
-        // console.log(res);
-        this.props.handleUser(
-          res.data.id,
-          res.data.username,
-          res.data.profilepic
-        );
-      })
+
+    this.props
+      .handleRegister(user)
       .then(() => this.props.history.push("/dashboard"));
   };
 
@@ -96,6 +89,6 @@ class Auth extends Component {
 export default withRouter(
   connect(
     null,
-    { handleUser }
+    { handleRegister }
   )(Auth)
 );

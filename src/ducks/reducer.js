@@ -1,43 +1,34 @@
 // import axios from "axios";
 
 const initialState = {
-  username: "",
-  id: 0,
-  profilepic: ""
-
-  // posts: []
+  name: "",
+  password: "",
+  loading: false,
+  userId: 0
 };
 
-const HANDLE_USER = "HANDLE_USER";
-// const GET_ALL_POSTS = "GET_ALL_POSTS";
+const HANDLE_REGISTER = "HANDLE_REGISTER";
+const HANDLE_REGISTER_PENDING = "HANDLE_REGISTER_PENDING";
+const HANDLE_REGISTER_FULFILLED = "HANDLE_REGISTER_FULFILLED";
 
-export function handleUser(id, username, profilepic) {
+export function handleRegister(username, password) {
   return {
-    type: HANDLE_USER,
-    payload: { id, username, profilepic }
+    type: HANDLE_REGISTER,
+    payload: { username, password }
   };
 }
 
-// export function getAllPosts(id, userposts, string) {
-//   return {
-//     type: GET_ALL_POSTS,
-//     payload: axios.get(`/api/posts/${id}`, { userposts, string })
-//   };
-// }
-
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case HANDLE_USER:
+    case HANDLE_REGISTER:
       return Object.assign({}, state, {
-        id: action.payload.id,
         username: action.payload.username,
-        profilepic: action.payload.profilepic
+        password: action.payload.password
       });
-
-    // case GET_ALL_POSTS:
-    //   return Object.assign({}, state, {
-    //     posts: action.payload.data
-    //   });
+    case HANDLE_REGISTER_PENDING:
+      return { ...state, loading: true };
+    case HANDLE_REGISTER_FULFILLED:
+      return { ...state, loading: false };
 
     default:
       return state;
